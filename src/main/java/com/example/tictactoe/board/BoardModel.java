@@ -11,15 +11,16 @@ public class BoardModel {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID uuid;
 
-    private String gamebBoard;
+    private String gameBoard;
 
     public UUID getUuid(){
         return  uuid;
     }
-    public String getGamebBoard() {
-        return gamebBoard;
+    public String getGameBoard() {
+        return gameBoard;
     }
-    public void setGamebBoard(String move){
-        this.gamebBoard = move;
+    public void setGameBoard(String move){
+        this.gameBoard = move;
     }
+
 }

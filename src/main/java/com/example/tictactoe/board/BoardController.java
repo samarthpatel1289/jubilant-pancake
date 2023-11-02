@@ -15,13 +15,14 @@ public class BoardController {
     private BoardService boardService;
 
     @PostMapping("/create-board")
-    public BoardModel createBoard(@RequestBody BoardModel move){
-        return boardService.makeBoard(move);
+    public BoardDto createBoard(@RequestBody BoardDto boardDto){
+        return boardService.makeBoard(boardDto);
     }
 
     @PostMapping("/make-move/{board}")
-    public Optional<BoardModel> makeMove(@PathVariable UUID board, @RequestBody MakeMove makeMove){
-        String move = makeMove.getMove();
-        return boardService.makeMove(board, move);
+    public Optional<BoardDto> makeMove(@PathVariable UUID board, @RequestBody BoardDto boardDto){
+        System.out.println(board);
+        System.out.println(boardDto.getGameBoard());
+        return boardService.makeMove(board, boardDto);
     }
 }
